@@ -1379,4 +1379,15 @@ p {
   .feature-block {
     min-height: 500px;
   }
+
+  .comparison-section > .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .problem-block,
+  .solution-block {
+    flex: 1;
+    max-width: none;
+  }
 }
