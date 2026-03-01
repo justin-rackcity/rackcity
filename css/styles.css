@@ -1160,6 +1160,41 @@ p {
   line-height: 1.7;
 }
 
+.problem-list {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: left;
+}
+
+.problem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.problem-item-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  color: var(--color-white);
+  opacity: 0.85;
+}
+
+.problem-item-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.problem-item p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-gray-300);
+  max-width: none;
+}
+
 /* Solution Block */
 .solution-block {
   background: var(--glass-bg-strong);
