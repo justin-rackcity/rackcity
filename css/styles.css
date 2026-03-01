@@ -488,7 +488,7 @@ p {
 
 @media (max-width: 767px) {
   .hero-bg img {
-    object-position: 18% center;
+    object-position: center center;
   }
 }
 
