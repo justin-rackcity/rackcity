@@ -1310,6 +1310,52 @@ p {
 }
 
 /* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact-form-wrap {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--glass-border);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 1rem 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  outline: none;
+  resize: vertical;
+  transition: all var(--transition-base);
+}
+
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-gray-500);
+}
+
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--glass-bg-strong);
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 .fade-in {
