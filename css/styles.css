@@ -352,6 +352,10 @@ p {
   color: var(--color-white);
 }
 
+.nav-desktop .btn--primary {
+  color: #ffffff;
+}
+
 /* Mobile Menu Button */
 .menu-toggle {
   display: flex;
