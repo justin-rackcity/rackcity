@@ -358,7 +358,7 @@
           <h3 style="margin-bottom: var(--space-sm);">Still got questions?</h3>
           <form class="contact-form" onsubmit="window.location.href='mailto:elliot@rackcitygym.com?subject=Question from ' + encodeURIComponent(this.contact_email.value) + '&body=' + encodeURIComponent(this.contact_message.value); event.preventDefault();">
             <input type="email" name="contact_email" placeholder="Your email" aria-label="Your email" required>
-            <textarea name="contact_message" placeholder="Your message" aria-label="Your message" rows="4" required></textarea>
+            <textarea name="contact_message" placeholder="Your message" aria-label="Your message" rows="4" maxlength="5000" required></textarea>
             <button type="submit" class="btn btn--primary">Send Message</button>
           </form>
         </div>
@@ -375,7 +375,7 @@
             <img src="assets/images/logo.png" alt="Rack City Logo" class="logo-icon">
             <span class="logo-text">Rack <span>City</span></span>
           </a>
-          <p>NYC's first fully automated, private weightlifting facility.</p>
+          <p>NYC's first 24-hour reservation-based strength training facility.</p>
         </div>
 
         <div class="footer-links">
