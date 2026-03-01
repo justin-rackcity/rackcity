@@ -486,11 +486,6 @@ p {
   opacity: 0.4;
 }
 
-@media (max-width: 767px) {
-  .hero-bg img {
-    object-position: center center;
-  }
-}
 
 .hero-overlay {
   position: absolute;

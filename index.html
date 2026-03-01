@@ -57,7 +57,10 @@
   <section class="hero">
     <div class="hero-bg">
       <!-- Replace with cinematic video loop. Using Unsplash placeholder for now -->
-      <img src="assets/images/hero-bg.png" alt="" loading="eager">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/images/hero-bg-mobile.png">
+        <img src="assets/images/hero-bg.png" alt="" loading="eager">
+      </picture>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
