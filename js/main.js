@@ -103,6 +103,63 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyVideos.forEach(video => videoObserver.observe(video));
   }
 
+  // --- Waitlist Modal ---
+  const WAITLIST_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfqCnwtI8q3v3o5z9cUAwPKd3YKyBgj7sjrLnKeFcMQarGXU5LofYcqRTPvc4QTC2W/exec';
+
+  const waitlistModal = document.getElementById('waitlistModal');
+  const waitlistForm  = document.getElementById('waitlistForm');
+  const waitlistSuccess = document.getElementById('waitlistSuccess');
+
+  if (waitlistModal) {
+    // Open
+    document.querySelectorAll('.waitlist-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        waitlistModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close — backdrop or X button
+    waitlistModal.querySelector('.waitlist-modal-backdrop').addEventListener('click', closeWaitlist);
+    waitlistModal.querySelector('.waitlist-modal-close').addEventListener('click', closeWaitlist);
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeWaitlist();
+    });
+
+    // Submit
+    waitlistForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name  = document.getElementById('waitlistName').value.trim();
+      const email = document.getElementById('waitlistEmail').value.trim();
+      if (!name || !email) return;
+
+      fetch(WAITLIST_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ name, email })
+      }).finally(() => {
+        waitlistForm.style.display = 'none';
+        waitlistSuccess.style.display = 'block';
+        setTimeout(() => {
+          closeWaitlist();
+          waitlistForm.style.display = '';
+          waitlistSuccess.style.display = '';
+          waitlistForm.reset();
+        }, 3000);
+      });
+    });
+  }
+
+  function closeWaitlist() {
+    if (waitlistModal) {
+      waitlistModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
   // --- Mobile FAB: Hide when at top ---
   const fab = document.querySelector('.mobile-fab');
   if (fab) {

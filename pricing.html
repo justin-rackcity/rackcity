@@ -91,18 +91,18 @@
         </div>
 
         <!-- RackCity Unlimited -->
-        <div class="pricing-card fade-in">
+        <div class="pricing-card pricing-card--unlimited fade-in">
           <span class="text-label">RackCity Unlimited</span>
-          <div class="pricing-amount">$399 <span>/ month</span></div>
-          <p class="pricing-desc">Train daily, anytime. Maximum flexibility.</p>
+          <div class="pricing-amount">$319 <span>/ month</span></div>
+          <p style="color: #e53e3e; font-style: italic; font-size: 0.875rem; margin: 0 0 var(--space-md);">Sold Out</p>
           <ul class="pricing-features">
             <li>1 hour per day, any time slot</li>
             <li>Book up to 3 months in advance</li>
-            <li>All locations access</li>
-            <li>Priority support</li>
-            <li>Cancel anytime — no contract</li>
+            <li>Cancel anytime &mdash; no contracts or initiation fees</li>
+            <li>Carries over to all future Rack City sites</li>
           </ul>
-          <a href="https://rackcity.podplay.app" target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;">Go Unlimited</a>
+          <a class="btn btn--outline" style="width:100%; pointer-events:none; opacity:0.4; cursor:not-allowed;">Sold Out</a>
+          <button class="btn btn--primary waitlist-trigger" style="width:100%; margin-top: var(--space-xs);">Join Waitlist</button>
         </div>
 
       </div>
@@ -259,6 +259,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- Waitlist Modal -->
+  <div class="waitlist-modal" id="waitlistModal" aria-modal="true" role="dialog">
+    <div class="waitlist-modal-backdrop"></div>
+    <div class="waitlist-modal-box">
+      <button class="waitlist-modal-close" aria-label="Close">&times;</button>
+      <h3>Join the Waitlist</h3>
+      <p>Be first to know when RackCity Unlimited opens back up.</p>
+      <form class="waitlist-modal-form" id="waitlistForm" novalidate>
+        <input type="text" id="waitlistName" name="name" placeholder="Your name" required autocomplete="name">
+        <input type="email" id="waitlistEmail" name="email" placeholder="Your email" required autocomplete="email">
+        <button type="submit" class="btn btn--primary" style="width:100%;">Notify Me</button>
+      </form>
+      <p class="waitlist-success" id="waitlistSuccess">You're on the list! We'll be in touch.</p>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
