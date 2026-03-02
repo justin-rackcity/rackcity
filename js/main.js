@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Waitlist Modal ---
-  const WAITLIST_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfqCnwtI8q3v3o5z9cUAwPKd3YKyBgj7sjrLnKeFcMQarGXU5LofYcqRTPvc4QTC2W/exec';
+  const WAITLIST_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLWwsL-OdIEWIVgDUo4uAULrS7ioiBnL1Ex0mZsnIXdANra5OL8CBNXB7754r6bq_L/exec';
 
   const waitlistModal = document.getElementById('waitlistModal');
   const waitlistForm  = document.getElementById('waitlistForm');
@@ -135,12 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = document.getElementById('waitlistEmail').value.trim();
       if (!name || !email) return;
 
-      fetch(WAITLIST_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ name, email })
-      }).finally(() => {
+      const url = WAITLIST_SCRIPT_URL + '?' + new URLSearchParams({ name, email }).toString();
+      fetch(url, { method: 'GET', mode: 'no-cors' }).finally(() => {
         waitlistForm.style.display = 'none';
         waitlistSuccess.style.display = 'block';
         setTimeout(() => {
