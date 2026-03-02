@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Waitlist Modal ---
-  const WAITLIST_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzLWwsL-OdIEWIVgDUo4uAULrS7ioiBnL1Ex0mZsnIXdANra5OL8CBNXB7754r6bq_L/exec';
+  const WAITLIST_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJhGUuXYweTlcmwI7KgJ4n-JRmIde4oY4NUfK9XQShm7fwyjQuOEUi0wtv0Xmzhd7K/exec';
 
   const waitlistModal = document.getElementById('waitlistModal');
   const waitlistForm  = document.getElementById('waitlistForm');
