@@ -870,7 +870,7 @@ p {
 }
 
 .pricing-card--featured::before {
-  content: 'MOST POPULAR';
+  content: '$200 VALUE';
   position: absolute;
   top: 0;
   left: 50%;
