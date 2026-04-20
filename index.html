@@ -437,8 +437,10 @@
         var n = document.getElementById('freeWorkoutName').value.trim();
         var e = document.getElementById('freeWorkoutEmail').value.trim();
         if (!n || !e) return;
-        var img = new Image();
-        img.src = 'https://script.google.com/macros/s/AKfycbxJhGUuXYweTlcmwI7KgJ4n-JRmIde4oY4NUfK9XQShm7fwyjQuOEUi0wtv0Xmzhd7K/exec?name=' + encodeURIComponent(n) + '&amp;email=' + encodeURIComponent(e);
+        var params = new URLSearchParams();
+        params.set('name', n);
+        params.set('email', e);
+        fetch('https://script.google.com/macros/s/AKfycbwvuWdvYYMjeCoj6AwK824Es9vFrGOekOXPntty098AxKZCers3yBYFrIoCr_uCORq9/exec?' + params.toString(), {method:'GET', mode:'no-cors'});
         document.getElementById('freeWorkoutForm').style.display = 'none';
         document.getElementById('freeWorkoutSuccess').style.display = 'block';
         setTimeout(function(){
