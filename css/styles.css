@@ -46,6 +46,7 @@
   --container-max: 1200px;
   --container-narrow: 800px;
   --header-height: 72px;
+  --banner-height: 36px;
 
   /* Border Radius */
   --radius-sm: 8px;
@@ -275,9 +276,30 @@ p {
 /* ============================================
    HEADER / NAVIGATION
    ============================================ */
-.site-header {
+/* ============================================
+   ANNOUNCEMENT BANNER
+   ============================================ */
+.announcement-banner {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  height: var(--banner-height);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.site-header {
+  position: fixed;
+  top: var(--banner-height);
   left: 0;
   right: 0;
   z-index: 1000;
@@ -1120,7 +1142,7 @@ p {
    PAGE HEADERS (inner pages)
    ============================================ */
 .page-header {
-  padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-xl);
+  padding: calc(var(--header-height) + var(--banner-height) + var(--space-2xl)) 0 var(--space-xl);
   text-align: center;
 }
 
