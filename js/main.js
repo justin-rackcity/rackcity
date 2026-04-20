@@ -156,54 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Free Workout Modal ---
-  const freeWorkoutModal   = document.getElementById('freeWorkoutModal');
-  const freeWorkoutForm    = document.getElementById('freeWorkoutForm');
-  const freeWorkoutSuccess = document.getElementById('freeWorkoutSuccess');
-
-  if (freeWorkoutModal) {
-    document.querySelectorAll('.free-workout-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        freeWorkoutModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    freeWorkoutModal.querySelector('.waitlist-modal-backdrop').addEventListener('click', closeFreeWorkout);
-    freeWorkoutModal.querySelector('.waitlist-modal-close').addEventListener('click', closeFreeWorkout);
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeFreeWorkout();
-    });
-
-    freeWorkoutForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name  = document.getElementById('freeWorkoutName').value.trim();
-      const email = document.getElementById('freeWorkoutEmail').value.trim();
-      if (!name || !email) return;
-
-      const url = WAITLIST_SCRIPT_URL + '?' + new URLSearchParams({ name, email }).toString();
-      fetch(url, { method: 'GET', mode: 'no-cors' }).finally(() => {
-        freeWorkoutForm.style.display = 'none';
-        freeWorkoutSuccess.style.display = 'block';
-        setTimeout(() => {
-          closeFreeWorkout();
-          freeWorkoutForm.style.display = '';
-          freeWorkoutSuccess.style.display = '';
-          freeWorkoutForm.reset();
-        }, 3000);
-      });
-    });
-  }
-
-  function closeFreeWorkout() {
-    if (freeWorkoutModal) {
-      freeWorkoutModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  // --- Mobile FAB: Hide when at top ---
+  // --- Mobile FAB
   const fab = document.querySelector('.mobile-fab');
   if (fab) {
     const fabObserver = () => {
