@@ -74,10 +74,12 @@
       <h1>Your Workout<br>Shouldn't Wait.</h1>
       <p>The first gym concept that lets you reserve your own fully equipped strength rack. Barbells, plates, bench, cables, pullups and more - starting at just $10 per session.</p>
       <a href="https://rackcity.podplay.app" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Book a Rack</a>
+      <button class="btn btn--outline btn--lg free-workout-trigger" style="margin-top: var(--space-xs);">Claim a Free Workout</button>
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.45); margin: var(--space-xs) auto 0; max-width: 340px; letter-spacing: 0.04em;">Opening June 2026 &mdash; drop your info and we&rsquo;ll credit your first session on us</p>
     </div>
   </section>
 
-  <!-- ====== THE PROBLEM / COMPARISON ====== -->
+  <!-- ====== THE PROBLEM
   <section class="section section--lg comparison-section">
     <div class="section-bg">
       <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1920&q=80" alt="" loading="lazy">
@@ -423,6 +425,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- ====== Free Workout Modal ====== -->
+  <div class="waitlist-modal" id="freeWorkoutModal" aria-modal="true" role="dialog">
+    <div class="waitlist-modal-backdrop"></div>
+    <div class="waitlist-modal-box">
+      <button class="waitlist-modal-close" aria-label="Close">&times;</button>
+      <h3>Get a Free Workout on Us</h3>
+      <p>We&rsquo;re opening June 2026 in Midtown East, NYC. Leave your name and email and we&rsquo;ll credit your account with a free session when we open.</p>
+      <form class="waitlist-modal-form" id="freeWorkoutForm" novalidate>
+        <input type="text" id="freeWorkoutName" name="name" placeholder="Your name" required autocomplete="name">
+        <input type="email" id="freeWorkoutEmail" name="email" placeholder="Your email" required autocomplete="email">
+        <button type="submit" class="btn btn--primary" style="width:100%;">Claim My Free Workout</button>
+      </form>
+      <p class="waitlist-success" id="freeWorkoutSuccess">You&rsquo;re in! We&rsquo;ll credit your account before we open.</p>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
