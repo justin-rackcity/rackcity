@@ -427,12 +427,28 @@
 
   <!-- ====== Free Workout Modal ====== -->
   <div class="waitlist-modal" id="freeWorkoutModal" aria-modal="true" role="dialog">
-    <div class="waitlist-modal-backdrop"></div>
+    <div class="waitlist-modal-backdrop" onclick="document.getElementById('freeWorkoutModal').classList.remove('open');document.body.style.overflow='';"></div>
     <div class="waitlist-modal-box">
-      <button class="waitlist-modal-close" aria-label="Close">&times;</button>
+      <button class="waitlist-modal-close" aria-label="Close" onclick="document.getElementById('freeWorkoutModal').classList.remove('open');document.body.style.overflow='';">&#x2715;</button>
       <h3>Get a Free Workout on Us</h3>
       <p>We&rsquo;re opening June 2026 in Midtown East, NYC. Leave your name and email and we&rsquo;ll credit your account with a free session when we open.</p>
-      <form class="waitlist-modal-form" id="freeWorkoutForm" novalidate>
+      <form class="waitlist-modal-form" id="freeWorkoutForm" novalidate onsubmit="
+        event.preventDefault();
+        var n = document.getElementById('freeWorkoutName').value.trim();
+        var e = document.getElementById('freeWorkoutEmail').value.trim();
+        if (!n || !e) return;
+        var img = new Image();
+        img.src = 'https://script.google.com/macros/s/AKfycbxJhGUuXYweTlcmwI7KgJ4n-JRmIde4oY4NUfK9XQShm7fwyjQuOEUi0wtv0Xmzhd7K/exec?name=' + encodeURIComponent(n) + '&amp;email=' + encodeURIComponent(e);
+        document.getElementById('freeWorkoutForm').style.display = 'none';
+        document.getElementById('freeWorkoutSuccess').style.display = 'block';
+        setTimeout(function(){
+          document.getElementById('freeWorkoutModal').classList.remove('open');
+          document.body.style.overflow = '';
+          document.getElementById('freeWorkoutForm').style.display = '';
+          document.getElementById('freeWorkoutSuccess').style.display = '';
+          document.getElementById('freeWorkoutForm').reset();
+        }, 3000);
+      ">
         <input type="text" id="freeWorkoutName" name="name" placeholder="Your name" required autocomplete="name">
         <input type="email" id="freeWorkoutEmail" name="email" placeholder="Your email" required autocomplete="email">
         <button type="submit" class="btn btn--primary" style="width:100%;">Claim My Free Workout</button>
