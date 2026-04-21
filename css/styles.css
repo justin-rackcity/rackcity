@@ -277,6 +277,19 @@ p {
    HEADER / NAVIGATION
    ============================================ */
 /* ============================================
+   RACK ANATOMY IMAGE
+   ============================================ */
+.rack-anatomy-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .rack-anatomy-desktop {
+    display: block;
+  }
+}
+
+/* ============================================
    ANNOUNCEMENT BANNER
    ============================================ */
 .announcement-banner {
