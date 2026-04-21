@@ -279,11 +279,19 @@ p {
 /* ============================================
    RACK ANATOMY IMAGE
    ============================================ */
+.rack-anatomy-mobile {
+  display: block;
+}
+
 .rack-anatomy-desktop {
   display: none;
 }
 
 @media (min-width: 768px) {
+  .rack-anatomy-mobile {
+    display: none;
+  }
+
   .rack-anatomy-desktop {
     display: block;
   }
