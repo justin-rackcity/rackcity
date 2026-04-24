@@ -428,8 +428,8 @@
     <div class="waitlist-modal-backdrop" onclick="document.getElementById('freeWorkoutModal').classList.remove('open');document.body.style.overflow='';"></div>
     <div class="waitlist-modal-box">
       <button class="waitlist-modal-close" aria-label="Close" onclick="document.getElementById('freeWorkoutModal').classList.remove('open');document.body.style.overflow='';">&#x2715;</button>
-      <h3>Get a Free Workout on Us</h3>
-      <p>We&rsquo;re opening 2026 in Midtown East, NYC. Leave your name and email and we&rsquo;ll credit your account with a free session when we open.</p>
+      <h3>Be the first to know</h3>
+      <p>Opening 2026 in Midtown East, NYC. Enter your info and we&rsquo;ll notify you when we launch &mdash; your first workout is on us.</p>
       <form class="waitlist-modal-form" id="freeWorkoutForm" novalidate onsubmit="
         event.preventDefault();
         var n = document.getElementById('freeWorkoutName').value.trim();
@@ -451,7 +451,7 @@
       ">
         <input type="text" id="freeWorkoutName" name="name" placeholder="Your name" required autocomplete="name">
         <input type="email" id="freeWorkoutEmail" name="email" placeholder="Your email" required autocomplete="email">
-        <button type="submit" class="btn btn--primary" style="width:100%;">Claim My Free Workout</button>
+        <button type="submit" class="btn btn--primary" style="width:100%;">Get Notified</button>
       </form>
       <p class="waitlist-success" id="freeWorkoutSuccess">You&rsquo;re in! We&rsquo;ll credit your account before we open.</p>
     </div>
